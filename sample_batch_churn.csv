@@ -1,0 +1,4 @@
+age,gender,education,experience_years,monthly_target,target_achievement,working_hours_per_week,overtime_hours_per_week,salary,commission_rate,job_satisfaction,work_location,manager_support_score,company_tenure_years,marital_status,distance_to_office_km
+30,Male,Diploma,5,130,0.85,55,8,5500000,0.05,3,Urban,3,2.0,Single,15.0
+42,Female,High School,10,150,0.65,60,12,6200000,0.07,2,Suburban,2,3.5,Married,25.0
+25,Male,Bachelor,2,100,0.95,50,5,4800000,0.04,4,Rural,4,1.0,Single,10.0
