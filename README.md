@@ -149,5 +149,5 @@ pip install -r requirements.txt
 If requirements.txt is not available, install manually:
 pip install streamlit pandas scikit-learn matplotlib seaborn
 
-### ⚙️ **Running The Application**
+Running The Application
 streamlit run app.py
