@@ -27,7 +27,7 @@ The company is facing a high turnover rate:
 - Impact: recruitment & onboarding costs of ~IDR 2.5 billion, loss of productivity, and workplace culture disruption.  
 
 **Goals:**  
-- Build a churn prediction model with *Recall ≥ 80%*, *F2 ≥ 75%*, and *AUC ≥ 80%*.  
+- Build a churn prediction model with *Recall ≥ 80%*, *F2 ≥ 75%*, and *AUC ≥ 80%* and implemented into Streamlit.  
 - Reduce recruitment and training costs by 15% within 6 months.  
 - Reduce churn by 12% within 3 months of implementing the model.  
 
