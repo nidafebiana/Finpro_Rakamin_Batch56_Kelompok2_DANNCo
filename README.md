@@ -22,7 +22,7 @@ This project aims to build a machine learning model to predict *employee churn* 
 
 ## Problem Statement  
 The company is facing a high turnover rate:  
-- Out of 1,000 new employees, **629 (62.9%) resigned within the first 1–3 months**.  
+- Out of 1,000 new employees, **629 (62.9%) churned within the first 1–3 months**.  
 - This number is far above the global benchmark (≤20%).  
 - Impact: recruitment & onboarding costs of ~IDR 2.5 billion, loss of productivity, and workplace culture disruption.  
 
