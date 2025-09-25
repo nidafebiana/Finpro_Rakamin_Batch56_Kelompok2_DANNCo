@@ -5,7 +5,7 @@
 - 🧑‍🔬 Data Scientist          → Nada Paradita
 - 📊 Business & Data Analyst → Nida Febiana
 
-# 🚀 Employee Churn Prediction - Rakamin Finpro DS56 Kelompok 2
+# 🚀 Employee Churn Prediction: A Data-Driven Strategy for Workforce Retention - Rakamin Finpro DS56 Kelompok 2.
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Modeling-orange?logo=scikit-learn)
@@ -15,40 +15,119 @@
 
 ---
 
-## 📌 Tentang Proyek
-Project ini merupakan Final Project dari **Rakamin Data Science Bootcamp Batch 56 (Kelompok 2)**.  
-Tujuan proyek ini adalah **memprediksi churn (resign) karyawan** menggunakan beberapa algoritma machine learning dan membuat **Rapid Web Apps prototyping** yang interaktif.  
-
-👉 Dengan model ini, perusahaan dapat:
-- ✅ Mengidentifikasi potensi churn karyawan lebih awal.  
-- ✅ Menjalankan simulasi pengurangan churn.  
-- ✅ Mengestimasi potensi **penghematan biaya** akibat churn.  
+## Introduction  
+This project aims to build a machine learning model to predict *employee churn* (employees leaving within the first 1–3 months). With this prediction, companies can take preventive actions to improve retention, reduce recruitment and training costs, and maintain organizational stability.  
 
 ---
 
-## 🧰 Algoritma yang Digunakan
-Model prediksi dibangun menggunakan **6 algoritma machine learning**:
-- 🟦 Logistic Regression  
-- 🌳 Decision Tree  
-- 🧑‍🤝‍🧑 K-Nearest Neighbors (KNN)  
-- 🌲 Random Forest  
-- ⚡ XGBoost  
-- 🐱 CatBoost  
+## Problem Statement  
+The company is facing a high turnover rate:  
+- Out of 1,000 new employees, **629 (62.9%) resigned within the first 1–3 months**.  
+- This number is far above the global benchmark (≤20%).  
+- Impact: recruitment & onboarding costs of ~IDR 2.5 billion, loss of productivity, and workplace culture disruption.  
 
-Setiap model dilakukan **hyperparameter tuning** untuk hasil yang optimal.  
+**Goals:**  
+- Build a churn prediction model with *Recall ≥ 80%*, *F2 ≥ 75%*, and *AUC ≥ 80%*.  
+- Reduce recruitment and training costs by 15% within 6 months.  
+- Reduce churn by 12% within 3 months of implementing the model.  
 
-## 📊 Hasil & Output
-### Model terbaik ditentukan dari evaluasi metrik (Recall, F2-score, ROC-AUC).
-### Aplikasi web menyediakan:
-- 🧑‍💼 Simulasi churn karyawan baru.
-- 💸 Estimasi potensi **pengurangan biaya** akibat churn.
-- 📈 Analisa data karyawan dalam bentuk visualisasi.
 ---
 
-## Employee Churn Prediction App
-Aplikasi ini adalah dashboard interaktif berbasis Streamlit untuk melakukan analisis data dan prediksi churn karyawan. Aplikasi ini mencakup fitur EDA (Exploratory Data Analysis), prediksi perorangan, prediksi batch, dan analisis penghematan biaya.
+## Dataset  
+- **Size:** 1,000 employees  
+- **Features:** 19 original + 6 engineered features  
+- **Target:** *Churn* (Yes/No)  
+- **Key Characteristics:**  
+  - 70% male, majority are single and diploma graduates  
+  - 50% work in urban areas  
+  - 40% churn in the first month → onboarding stage is critical  
+- **Data Quality:**  
+  - No missing values  
+  - No duplicates  
+  - No multicollinearity (correlations < 0.7)  
 
-### 📁 Struktur Folder
+---
+
+## Methodology  
+
+### 1. Exploratory Data Analysis (EDA)  
+- Highest churn observed among employees with:  
+  - Low *job satisfaction*  
+  - Long *working hours*  
+  - Longer *distance to office*  
+- Even top performers churn at 50% → issues go beyond performance.  
+
+### 2. Data Preprocessing  
+- Checked duplicates & missing values → none  
+- Outlier handling  
+- Feature extraction (education, work location, churn period, etc.)  
+- Categorical encoding (Label & One-Hot Encoding)  
+- Train-test split (80:20)  
+- Addressed class imbalance  
+
+### 3. Model Selection  
+- Baseline: Logistic Regression, KNN  
+- Tree-based models: Random Forest, Decision Tree, CatBoost, XGBoost  
+- **XGBoost** chosen for its balanced performance (Recall, F2, AUC).  
+
+### 4. Model Training & Evaluation  
+- **Best model: XGBoost**  
+- Test data (n=200):  
+  - Recall: **91.26%**  
+  - F2 Score: **86.59%**  
+  - ROC-AUC: **77.9%** (close to 80% target)  
+- Feature importance (SHAP): *Target Achievement, Job Satisfaction, Manager Support, Performance Gap, Distance to Office* were the top predictors.  
+
+---
+
+## Results & Visualization  
+- **Business Impact:**  
+  - Potential cost savings of up to **Rp 2.3 billion** (if 100% effective).  
+  - Even with 25% effectiveness → savings of Rp 575M, exceeding target (Rp 377M).  
+- **Key Visualizations:**  
+  - Feature correlation heatmap  
+  - Churn distribution by demographics & work factors  
+  - Confusion matrix for XGBoost  
+  - SHAP feature importance  
+  - Fairness analysis (gender, marital status, education, location) → model proven unbiased.  
+
+---
+
+## Deployment  
+- Model deployed with **Streamlit App** in two modes:  
+  - Individual prediction  
+  - Batch prediction  
+- Access links:  
+  - [Streamlit Deployment](https://bit.ly/Deployment_Kelompok2)  
+  - [Batch Simulation Data](https://bit.ly/Data_Simulation_Kelompok2)  
+
+---
+
+## Challenges & Learnings  
+
+**Challenges:**  
+- Handling class imbalance in churn data  
+- Balancing the trade-off between *Recall* and *False Positives*  
+- Hyperparameter tuning to improve AUC  
+
+**Learnings:**  
+- *Recall* is more critical than *Precision* in HR → false alarms are acceptable to avoid missing real churn cases.  
+- Non-financial factors (job satisfaction, manager support, distance) drive churn more than salary.  
+- Fairness testing is essential to ensure no bias toward gender, marital status, education, or work location.  
+
+---
+
+## Conclusion & Next Steps  
+- The XGBoost model achieved its main targets (*Recall* > 80%, *F2* > 75%).  
+- Implementation can significantly reduce churn and HR costs.  
+- **Next Steps:**  
+  - Retrain model quarterly with new data.  
+  - Integrate into HR systems for real-time prediction.  
+  - Focus on onboarding, job satisfaction monitoring, and manager support as key retention strategies.  
+
+---
+
+### 📁 Folder Sturcture
 ```
 project-folder/
 ├── app.py
@@ -59,48 +138,16 @@ project-folder/
 └── ...
 ```
 ---
-### ⚙️ Instalasi
-1. **Clone repositori atau salin file ke folder lokal**
-2. **Aktifkan virtual environment (opsional tapi disarankan)**
-3. **Install dependensi**
+### ⚙️ Installation
+1. **Clone the repository or copy the files to your local folder**
+2. **Activate a virtual environment** (optional but recommended)
+3. **Install dependencies**
 
 ```bash
 pip install -r requirements.txt
-```
-Jika tidak ada `requirements.txt`, install manual:
-```bash
+
+If requirements.txt is not available, install manually:
 pip install streamlit pandas scikit-learn matplotlib seaborn
-```
----
 
-### 🚀 Menjalankan Aplikasi
-
-```bash
+### ⚙️ **Running The Application**
 streamlit run app.py
-```
----
-### 🧭 Navigasi Aplikasi
-Gunakan sidebar di sebelah kiri untuk memilih halaman:
-
-#### 1. 📊 Dashboard (EDA)
-- Menampilkan ringkasan dataset
-- Visualisasi missing values, distribusi target, fitur numerik & kategorikal
-- Korelasi antar fitur numerik
-
-#### 2. 👤 Prediksi Perorangan
-- Masukkan data karyawan secara manual
-- Dapatkan prediksi churn dan estimasi penghematan jika churn dicegah
-
-#### 3. 📂 Prediksi Batch
-- Upload file CSV berisi data karyawan
-- Dapatkan hasil prediksi churn secara massal dan unduh hasilnya
-
-#### 4. 💰 Analisis Penghematan Biaya
-- Simulasikan penghematan biaya berdasarkan efektivitas intervensi dan biaya tindakan
-- Visualisasi kurva net saving terhadap threshold
-
----
-
-### 📌 Catatan
-- Pastikan file dataset (`employee_churn_prediction_updated.csv`) tersedia di direktori yang sama dengan `app.py`, atau sesuaikan path-nya di sidebar.
-- File `utils.py` dan `eda_module.py` harus tersedia karena berisi fungsi pendukung.
