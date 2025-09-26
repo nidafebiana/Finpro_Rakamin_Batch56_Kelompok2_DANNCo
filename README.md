@@ -75,8 +75,14 @@ The company is facing a high turnover rate:
 - Test data (n=200):  
   - Recall: **91.26%**  
   - F2 Score: **86.59%**  
-  - ROC-AUC: **77.9%** (close to 80% target)  
-- Feature importance (SHAP): *Target Achievement, Job Satisfaction, Manager Support, Performance Gap, Distance to Office* were the top predictors.  
+  - ROC-AUC: **77.9%** (close to 80% target)
+
+ ### 5. Key Predictors (SHAP Analysis)
+ - Target Achievement
+ - Job Satisfaction
+ - Manager Support
+ - Perfomance Gap
+ - Distance to Office
 
 ---
 
