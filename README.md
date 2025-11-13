@@ -48,6 +48,14 @@ The company is facing a high turnover rate:
 
 ---
 
+## 🛠️ Tech Stack
+- **Language:** Python  
+- **Libraries:** pandas, scikit-learn, XGBoost, matplotlib, seaborn, SHAP  
+- **Deployment:** Streamlit  
+- **Data Source:** Synthetic HR dataset (1,000 employees)
+
+---
+
 ## Methodology  
 
 ### 1. Exploratory Data Analysis (EDA)  
@@ -131,6 +139,8 @@ The company is facing a high turnover rate:
   - Integrate into HR systems for real-time prediction.  
   - Focus on onboarding, job satisfaction monitoring, and manager support as key retention strategies.  
 
+---
+💬 *This project demonstrates how data-driven insights can help HR teams proactively retain talent through predictive analytics.*
 ---
 
 ### 📁 Folder Sturcture
